@@ -1,0 +1,8 @@
+---
+- name: Deploy PostgreSQL instance (cluster)
+  hosts: pg-servers
+  become: true
+  become_user: '{{ postgresql_user }}'
+  roles:
+    - { role: postgresql-instance, tags: postgresql-instance }
+
